@@ -15,16 +15,47 @@
 % -----------------------------------------------------------------
 
 
-\section{Contexto industrial}
+\section{Contexto Industrial}
 \label{sec:contexto_industrial}
 
-% Base: docs/dissertacao/08_contexto_industrial.md
-% Pontos a cobrir:
-%   - Cadeia produtiva do fio esmaltado (trefilação, recozedor,
-%     esmaltação, cestos, bobinador).
-%   - Caráter contínuo do processo e o efeito de uma interrupção.
-%   - Aplicações finais (motores, transformadores, bobinas).
-%   - Multiplicidade de causas possíveis para um rompimento.
+
+\subsection{Fundição para criação da matéria-prima}
+\label{subsec:fundicao}
+
+A Figura~\ref{fig:fluxo_vergalhao} apresenta o fluxo simplificado da produção do vergalhão de cobre por lingotamento contínuo e laminação. O processo inicia com cátodos de cobre eletro-refinado, que são carregados no forno de fusão. Após a fusão, o cobre líquido é transferido por canal para o forno de retenção e, em seguida, conduzido à máquina de lingotamento contínuo. Na rota Southwire descrita por Cuypers, a máquina de lingotamento utiliza uma roda de aço com canal periférico, fechado por uma cinta metálica, formando a cavidade de solidificação. Durante a rotação, o cobre é resfriado com água e forma uma barra contínua \cite{cuypers1987continuous}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Figuras/fundicao.pdf}
+    \caption{Fluxo simplificado da produção do vergalhão de cobre por lingotamento contínuo e laminação.}
+    \label{fig:fluxo_vergalhao}
+    \fonte{Adaptado de \citeonline{cuypers1987continuous}.}
+\end{figure}
+
+Após o lingotamento, a barra contínua passa por uma etapa de remoção de rebarbas antes de seguir para a laminação. Em seguida, a barra é processada em um trem de laminação com múltiplos passes, responsável pela redução progressiva da seção até a obtenção do diâmetro especificado para o vergalhão. As linhas CCR são compostas por forno de fusão, forno de retenção, unidade de lingotamento, trem de laminação, sistema de decapagem e bobinador \cite{cuypers1987continuous}.
+
+Na sequência final, o vergalhão passa por decapagem e resfriamento para remoção da camada superficial de óxidos e preparação do produto. Por fim, o material é cortado e bobinado, originando o vergalhão de cobre que será utilizado como matéria-prima nas etapas posteriores de trefilação. Essa sequência corresponde à rota CCR, na qual o cobre é continuamente fundido, solidificado, laminado, decapado e bobinado \cite{cuypers1987continuous}.
+
+
+\subsection{Recebimento e inspeção do vergalhão}
+\label{subsec:recebimento_vergalhao}
+
+Ao chegar à fábrica de fios, o vergalhão é descarregado em bobinas padronizadas e submetido a uma inspeção de recebimento que combina conferência dimensional e avaliação visual. A conferência confirma calibre, peso e identificação do lote contra o documento do fornecedor. A avaliação visual procura defeitos superficiais aparentes, como riscos profundos, dobras, oxidação e deformações localizadas. Em condições normais, o vergalhão segue do estoque para a linha de produção sem sofrer transformação prévia. % TODO: cite norma ou referência de inspeção de recebimento de vergalhão
+
+Apesar do controle realizado na origem e na inspeção de recebimento, parte dos defeitos relevantes para o processamento posterior não é perceptível por avaliação externa. Inclusões metálicas, microtrincas internas, asperezas localizadas, bolhas de superfície e variações pontuais de microestrutura podem permanecer ocultas sob a camada superficial. Esses defeitos têm origem na própria etapa de fundição e laminação no fornecedor e estão associados a fatores como impurezas no banho metálico, regulagem da máquina de lingotamento e variações na taxa de resfriamento \cite{cuypers1987continuous}.
+
+A consequência prática é que o defeito do vergalhão se manifesta apenas quando o material é submetido a esforços mecânicos durante a trefilação ou térmicos durante o recozimento e a esmaltação. Um vergalhão com microtrinca interna pode atravessar diversos passes de redução de diâmetro antes de romper, enquanto um vergalhão com bolha superficial pode resistir até a etapa de cura do verniz no forno e gerar evento somente ali. Essa defasagem entre origem e manifestação do defeito é a principal razão pela qual a atribuição da causa de um rompimento é difícil. % TODO: cite literatura sobre falhas tardias em trefilação ou esmaltação
+
+Diferenças entre fornecedores e entre lotes de um mesmo fornecedor agravam o problema. Lotes oriundos de cargas distintas de cátodo, conduzidos em janelas de operação diferentes da linha CCR, podem apresentar perfis de defeito sistematicamente distintos mesmo quando aprovados nos mesmos critérios de inspeção. Esse efeito de lote é silencioso na inspeção de recebimento e só pode ser observado de forma agregada quando se analisa o histórico de rompimentos por origem da matéria-prima. % TODO: cite literatura sobre batch effect e variabilidade entre fornecedores
+
+
+% -----------------------------------------------------------------
+% Subseções a redigir em sequência:
+%   1.1.3 Cadeia produtiva da fábrica de fios
+%     base: docs/dissertacao/08_contexto_industrial.md
+%   1.1.4 Operação contínua e impacto dos rompimentos
+%   1.1.5 Multiplicidade de causas e dificuldade de diagnóstico
+% -----------------------------------------------------------------
 
 
 \section{Problema de pesquisa}
