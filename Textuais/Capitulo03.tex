@@ -1,6 +1,114 @@
+\chapter{Metodologia}
+\label{cap:metodologia}
+
+% -----------------------------------------------------------------
+% Objetivo do capítulo:
+% Descrever como a pesquisa é conduzida, do recorte da aplicação
+% até a estratégia de avaliação. O capítulo precisa permitir que
+% um leitor técnico reproduza os passos principais.
+%
+% Distinção de escopo:
+%   - Este capítulo descreve o MÉTODO.
+%   - O Capítulo 4 descreve a IMPLEMENTAÇÃO (arquitetura
+%     concreta da ferramenta, pipeline, indicadores).
+%   - O Capítulo 5 traz os RESULTADOS.
+% -----------------------------------------------------------------
 
 
-\chapter{Conclusão}
+\section{Caracterização da pesquisa}
+\label{sec:caracterizacao_pesquisa}
+
+% Conteúdo a desenvolver:
+%   - Abordagem exploratória, orientada por problema e
+%     objetivos, sem hipótese formal confirmatória.
+%   - Pesquisa aplicada, conduzida sobre dados reais de uma
+%     fábrica de fios esmaltados.
+%   - Justificar a escolha por técnicas não supervisionadas
+%     (ausência de rótulo de causa no nível do evento).
 
 
+\section{Contexto da aplicação}
+\label{sec:contexto_aplicacao}
 
+% Conteúdo a desenvolver:
+%   - Descrição da fábrica e do recorte adotado.
+%   - Linhas de produção consideradas.
+%   - Janela temporal dos dados analisados.
+
+
+\section{Fontes de dados}
+\label{sec:fontes_dados}
+
+% Conteúdo a desenvolver:
+%   - Dados operacionais das máquinas (sensores, periodicidade,
+%     variáveis disponíveis).
+%   - Histórico de rompimentos (registro de evento, anotação
+%     manual quando existente).
+%   - Dados de lotes, materiais e fornecedores.
+%   - Dados de contexto produtivo (ordem de produção,
+%     calibres, regulagens).
+%   - Relatório de devoluções (ground truth supervisionado
+%     para validação externa).
+
+
+\section{Preparação e estruturação dos dados}
+\label{sec:preparacao_dados}
+
+% Conteúdo a desenvolver:
+%   - Integração das bases.
+%   - Limpeza e padronização.
+%   - Tratamento de faltantes.
+%   - Definição operacional de evento e de exposição.
+%   - Cruzamento entre tabelas (lote, máquina, fornecedor,
+%     janela de operação).
+
+
+\section{Módulo de detecção de anomalias operacionais}
+\label{sec:modulo_anomalia}
+
+% Conteúdo a desenvolver:
+%   - Variáveis analisadas (sensores selecionados, justificativa
+%     técnica do conjunto de 14 sensores do Pilar EQ).
+%   - Estratégia de modelagem (Isolation Forest e seus
+%     parâmetros).
+%   - Forma de detectar e quantificar desvio.
+%   - Tratamento de combinações sem cobertura (rota SEM_MODELO
+%     e fallback ao Pilar MP).
+
+
+\section{Módulo de análise estatística histórica}
+\label{sec:modulo_estatistico}
+
+% Conteúdo a desenvolver:
+%   - Construção de indicadores de risco por lote, material,
+%     fornecedor e máquina.
+%   - Cálculo de exposição operacional e taxa relativa de
+%     rompimento.
+%   - Regra de cruzamento entre máquinas para fortalecer ou
+%     enfraquecer a suspeita de matéria-prima.
+
+
+\section{Lógica de integração híbrida}
+\label{sec:integracao_hibrida}
+
+% Conteúdo a desenvolver:
+%   - Como as evidências operacionais e históricas são
+%     combinadas para produzir um diagnóstico único.
+%   - Regras de decisão entre Pilar EQ e Pilar MP.
+%   - Saída esperada do sistema (categorias de origem
+%     provável e nível de confiança).
+%   - Tratamento de empate e de evidência conflitante.
+
+
+\section{Estratégia de avaliação}
+\label{sec:estrategia_avaliacao}
+
+% Conteúdo a desenvolver:
+%   - Comparação entre módulo de anomalia isolado, módulo
+%     estatístico isolado e abordagem híbrida.
+%   - Avaliação por coerência técnica com conhecimento de
+%     especialistas.
+%   - Validação contra casos históricos documentados,
+%     incluindo o caso IBRAME 482530.
+%   - Validação externa contra o relatório de devoluções.
+%   - Limites de cada estratégia de avaliação.

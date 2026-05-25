@@ -1,10 +1,109 @@
+\chapter{Fundamentação Teórica}
+\label{cap:fundamentacao}
+
+% -----------------------------------------------------------------
+% Fio argumentativo do capítulo (funil até a lacuna):
+%
+%   2.1  Estabelece que o problema é real e multifatorial.
+%   2.2  Mostra a tradição de apoio à decisão técnica e suas
+%        limitações diante de dados sensoriais modernos.
+%   2.3  Apresenta a primeira família de técnicas (anomalias
+%        em séries operacionais) que sustenta o Pilar EQ. RQ1.
+%   2.4  Apresenta a segunda família (estatística histórica por
+%        lote, fornecedor, máquina) que sustenta o Pilar MP. RQ3.
+%   2.5  Discute a integração das duas famílias e a
+%        explicabilidade, apontando a lacuna que o WireSense
+%        ocupa. RQ2 e RQ4.
+%
+% Protocolo da revisão sistemática:
+%   docs/dissertacao/protocolo_revisao.md
+% Sementes para bootstrap:
+%   Chandola et al. (2009), Pang et al. (2021), Liu et al. (2008).
+% -----------------------------------------------------------------
 
 
+\section{Rompimentos em processos industriais}
+\label{sec:rompimentos}
 
-\chapter{Desenvolvimento}
+% Função retórica: estabelecer que o problema é real e
+% multifatorial.
+% Conteúdo a desenvolver:
+%   - Natureza multifatorial do evento (matéria-prima,
+%     equipamento, regulagem, interação).
+%   - Efeitos em produtividade, qualidade e custo.
+%   - Específico ao domínio: defeitos de vergalhão, falhas de
+%     trefilação, esmaltação e bobinagem. RQ5.
+% Conclui apontando que abordagens monofatoriais são
+% insuficientes para diagnosticar a origem provável.
 
 
+\section{Diagnóstico de falhas, manutenção e qualidade}
+\label{sec:diagnostico}
+
+% Função retórica: situar o trabalho na tradição de apoio à
+% decisão técnica em manufatura.
+% Conteúdo a desenvolver:
+%   - Análise de falhas em ambiente produtivo (FMEA, RCA,
+%     árvore de falhas, controle estatístico de processo).
+%   - Limitações dessas ferramentas para absorver dado
+%     sensorial em alta frequência.
+% Conclui apontando a necessidade de incorporar dados
+% operacionais e históricos de forma sistemática.
 
 
+\section{Detecção de anomalias em dados industriais}
+\label{sec:anomalias}
+
+% Função retórica: apresentar a família de técnicas que
+% sustenta o Pilar EQ.
+% RQ1.
+% Conteúdo a desenvolver:
+%   - Conceito de anomalia em séries temporais multivariadas.
+%   - Aprendizado não supervisionado, com destaque para
+%     Isolation Forest e variantes.
+%   - Métricas de avaliação em ausência de rótulo.
+%   - Aplicações em manufatura e limites conhecidos.
+% Conclui apontando que ML isolado não distingue causa
+% associada a matéria-prima e que falta integração com
+% conhecimento histórico de lote e fornecedor.
 
 
+\section{Análise estatística histórica de falhas}
+\label{sec:estatistica_historica}
+
+% Função retórica: apresentar a família de técnicas que
+% sustenta o Pilar MP.
+% RQ3.
+% Conteúdo a desenvolver:
+%   - Taxa de falha, exposição operacional e risco relativo.
+%   - Recorrência por lote, material, fornecedor e máquina.
+%   - Efeito de lote e variabilidade entre fornecedores.
+%   - Indicadores de qualidade de matéria-prima em
+%     processo contínuo.
+% Conclui apontando que estatística histórica isolada não
+% captura desvio operacional em janela curta e depende de
+% agregação que pode atrasar o diagnóstico.
+
+
+\section{Sistemas híbridos e explicabilidade}
+\label{sec:hibridos_xai}
+
+% Função retórica: mostrar que combinar as duas famílias é a
+% direção promissora, mas pouco consolidada no domínio de fios
+% esmaltados, e apontar a lacuna.
+% RQ2 e RQ4.
+% Conteúdo a desenvolver:
+%   - Estratégias de combinação (regras, ensemble, fusão de
+%     evidências, sistemas em camadas).
+%   - Importância de resultados interpretáveis em chão de
+%     fábrica.
+%   - Interpretabilidade aplicada a manutenção, qualidade e
+%     engenharia.
+% Conclui com o parágrafo da lacuna:
+%   - Existe maturidade nas duas famílias isoladas.
+%   - Há trabalhos pontuais de integração em outros domínios.
+%   - Falta uma arquitetura híbrida e explicável aplicada ao
+%     domínio específico de fios esmaltados, com regra de
+%     cruzamento entre máquinas para diferenciar falha de
+%     equipamento de suspeita de matéria-prima.
+%   - Essa lacuna motiva o capítulo seguinte.

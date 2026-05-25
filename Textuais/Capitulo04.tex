@@ -1,0 +1,81 @@
+\chapter{Desenvolvimento da Ferramenta}
+\label{cap:desenvolvimento}
+
+% -----------------------------------------------------------------
+% Objetivo do capítulo:
+% Mostrar a implementação concreta do que foi descrito no
+% Capítulo 3. É aqui que entram diagramas de arquitetura,
+% pseudocódigo dos indicadores, exemplos de saída, decisões de
+% engenharia e ajustes feitos durante o desenvolvimento.
+%
+% Referência interna:
+%   docs/pipeline/README.md
+%   docs/pipeline/resumo_algoritmos.md
+%   docs/pipeline/resumo_metodo_estatistico_global.txt
+% -----------------------------------------------------------------
+
+
+\section{Visão geral da arquitetura}
+\label{sec:arquitetura}
+
+% Conteúdo a desenvolver:
+%   - Nome interno da ferramenta (WireSense) e organização em
+%     dois pilares (Pilar MP e Pilar EQ).
+%   - Diagrama da arquitetura (referenciar imagem em
+%     docs/diagramas/).
+%   - Papel de cada pilar e como se comunicam.
+
+
+\section{Pipeline de dados}
+\label{sec:pipeline}
+
+% Conteúdo a desenvolver:
+%   - Sequência de etapas, das tabelas brutas ao diagnóstico.
+%   - Mapa entre scripts implementados e etapas do pipeline.
+%   - Pontos de integração com as bases existentes.
+
+
+\section{Implementação do módulo de anomalia (Pilar EQ)}
+\label{sec:impl_eq}
+
+% Conteúdo a desenvolver:
+%   - Conjunto de 14 sensores e justificativa técnica da
+%     escolha.
+%   - Treinamento e ajuste do Isolation Forest.
+%   - Critérios de SEM_MODELO e fallback ao Pilar MP.
+%   - Exemplos de saída do módulo.
+
+
+\section{Implementação do módulo estatístico (Pilar MP)}
+\label{sec:impl_mp}
+
+% Conteúdo a desenvolver:
+%   - Indicadores calculados (taxas, exposição, risco relativo,
+%     cruzamento entre máquinas).
+%   - Decisão metodológica registrada em 12/05: o Pilar MP
+%     conta apenas rompimentos, com bolha removida do
+%     numerador.
+%   - Regra MODERADA: o Pilar MP é acionável, o ground truth
+%     do relatório de devoluções é reservado para validação
+%     externa.
+%   - Exemplos de saída do módulo.
+
+
+\section{Regras de integração e diagnóstico final}
+\label{sec:regras_integracao}
+
+% Conteúdo a desenvolver:
+%   - Lógica de combinação entre Pilar EQ e Pilar MP.
+%   - Categorias de origem provável.
+%   - Forma de apresentação do diagnóstico (texto, indicadores,
+%     evidência de apoio).
+
+
+\section{Decisões de engenharia e ajustes iterativos}
+\label{sec:decisoes_engenharia}
+
+% Conteúdo a desenvolver:
+%   - Principais decisões tomadas durante o desenvolvimento.
+%   - Compromissos entre cobertura, precisão e
+%     interpretabilidade.
+%   - Pontos de extensibilidade da ferramenta.
