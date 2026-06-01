@@ -1,19 +1,6 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-% -----------------------------------------------------------------
-% Objetivo do capítulo:
-% Apresentar o contexto industrial, o problema dos rompimentos, a
-% motivação para uma ferramenta de apoio à decisão e a estrutura
-% geral do trabalho. A introdução deve responder, em ordem:
-%   1. Qual é o cenário industrial?
-%   2. Qual é o problema?
-%   3. Por que ele é difícil?
-%   4. O que a pesquisa propõe?
-%   5. Quais são objetivos e contribuições?
-%   6. Como o documento está organizado?
-% -----------------------------------------------------------------
-
 
 \section{Contexto Industrial}
 \label{sec:contexto_industrial}
@@ -40,13 +27,13 @@ Na sequência final, o vergalhão passa por decapagem e resfriamento para remoç
 \subsection{Recebimento e inspeção do vergalhão}
 \label{subsec:recebimento_vergalhao}
 
-Ao chegar à fábrica de fios, o vergalhão é descarregado em bobinas padronizadas e submetido a uma inspeção de recebimento que combina conferência dimensional e avaliação visual. A conferência confirma calibre, peso e identificação do lote contra o documento do fornecedor. A avaliação visual procura defeitos superficiais aparentes, como riscos profundos, dobras, oxidação e deformações localizadas. Em condições normais, o vergalhão segue do estoque para a linha de produção sem sofrer transformação prévia. % TODO: cite norma ou referência de inspeção de recebimento de vergalhão
+Ao chegar à fábrica de fios, o vergalhão é descarregado em bobinas padronizadas e submetido a uma inspeção de recebimento que combina conferência dimensional e avaliação visual. A conferência confirma calibre, peso e identificação do lote contra o documento do fornecedor. A avaliação visual procura defeitos superficiais aparentes, como riscos profundos, dobras, oxidação e deformações localizadas. Em condições normais, o vergalhão segue do estoque para a linha de produção sem sofrer transformação prévia.
 
 Apesar do controle realizado na origem e na inspeção de recebimento, parte dos defeitos relevantes para o processamento posterior não é perceptível por avaliação externa. Inclusões metálicas, microtrincas internas, asperezas localizadas, bolhas de superfície e variações pontuais de microestrutura podem permanecer ocultas sob a camada superficial. Esses defeitos têm origem na própria etapa de fundição e laminação no fornecedor e estão associados a fatores como impurezas no banho metálico, regulagem da máquina de lingotamento e variações na taxa de resfriamento \cite{cuypers1987continuous}.
 
-A consequência prática é que o defeito do vergalhão se manifesta apenas quando o material é submetido a esforços mecânicos durante a trefilação ou térmicos durante o recozimento e a esmaltação. Um vergalhão com microtrinca interna pode atravessar diversos passes de redução de diâmetro antes de romper, enquanto um vergalhão com bolha superficial pode resistir até a etapa de cura do verniz no forno e gerar evento somente ali. Essa defasagem entre origem e manifestação do defeito é a principal razão pela qual a atribuição da causa de um rompimento é difícil. % TODO: cite literatura sobre falhas tardias em trefilação ou esmaltação
+A consequência prática é que o defeito do vergalhão se manifesta apenas quando o material é submetido a esforços mecânicos durante a trefilação ou térmicos durante o recozimento e a esmaltação. Um vergalhão com microtrinca interna pode atravessar diversos passes de redução de diâmetro antes de romper, enquanto um vergalhão com bolha superficial pode resistir até a etapa de cura do verniz no forno e gerar evento somente ali. Essa defasagem entre origem e manifestação do defeito é a principal razão pela qual a atribuição da causa de um rompimento é difícil.
 
-Diferenças entre fornecedores e entre lotes de um mesmo fornecedor agravam o problema. Lotes oriundos de cargas distintas de cátodo, conduzidos em janelas de operação diferentes da linha CCR, podem apresentar perfis de defeito sistematicamente distintos mesmo quando aprovados nos mesmos critérios de inspeção. Esse efeito de lote é silencioso na inspeção de recebimento e só pode ser observado de forma agregada quando se analisa o histórico de rompimentos por origem da matéria-prima. % TODO: cite literatura sobre batch effect e variabilidade entre fornecedores
+Diferenças entre fornecedores e entre lotes de um mesmo fornecedor agravam o problema. Lotes oriundos de cargas distintas de cátodo, conduzidos em janelas de operação diferentes da linha CCR, podem apresentar perfis de defeito sistematicamente distintos mesmo quando aprovados nos mesmos critérios de inspeção. Esse efeito de lote é silencioso na inspeção de recebimento e só pode ser observado de forma agregada quando se analisa o histórico de rompimentos por origem da matéria-prima.
 
 
 \subsection{Trefilação primária}
@@ -60,187 +47,4 @@ Na fábrica de fios analisada nesta pesquisa, o vergalhão é adquirido de múlt
 
 O cobre apresenta estrutura cristalina cúbica de face centrada, alta ductilidade e resposta significativa de encruamento ao trabalho a frio \cite{wright2011wire}. O encruamento se acumula ao longo dos passes de redução, e a deformação plástica introduzida em cada passe degrada simultaneamente a condutividade elétrica do material pela proliferação de defeitos cristalinos como discordâncias e vacâncias \cite{wright2011wire}. Esses dois efeitos justificam a etapa adicional de recozimento aplicada ao fio de cobre na fábrica analisada, ausente no caso do alumínio. O recozimento ocorre após a trefilação e antes da bobinagem nos cestos, e tem como função tanto restaurar a maleabilidade perdida durante os múltiplos passes quanto recuperar a condutividade elétrica próxima ao padrão IACS, condição necessária para o uso do fio em aplicações de enrolamento \cite{wright2011wire}. A escolha da atmosfera do recozedor industrial busca ainda evitar a formação de blistering, fenômeno que pode afetar cobre eletrolítico do tipo tough-pitch quando exposto a hidrogênio em temperatura elevada \cite{wright2011wire}.
 
-% TODO: confirmar com a planta o tipo de recozedor (in-line por resistência
-% elétrica ou offline em forno box / bell), a atmosfera empregada (vapor,
-% nitrogênio ou outra) e a faixa de temperatura. Wright (2011) descreve o
-% in-line por resistência elétrica como configuração moderna padrão para
-% non-ferrous em alta velocidade (Cap. 13.4, Fig. 13.7).
-
 A trefilação primária é um ponto crítico para o aparecimento de rompimentos. Wright observa explicitamente que a frequência de quebras é a limitação prática das máquinas modernas de não-ferroso em alta velocidade, dado o custo de produção perdida durante a reintrodução do fio na linha após uma interrupção \cite{wright2011wire}. Os mecanismos que levam à quebra nessa etapa são heterogêneos. Defeitos internos do vergalhão, como inclusões, microtrincas e regiões de fusão imperfeita herdadas do lingotamento contínuo do fornecedor, manifestam-se preferencialmente nas primeiras fieiras, onde a tensão de tração atinge seu valor máximo. Falhas de equipamento, como desgaste de fieiras, instabilidade no sistema de lubrificação e variações na tensão entre capstans, podem produzir eventos de aparência muito semelhante. A separação entre essas duas famílias de causa é precisamente o problema que a ferramenta proposta nesta dissertação busca apoiar.
-
-
-\subsection{Recozimento}
-\label{subsec:recozimento}
-
-% TODO: redigir após buscar referências em Mestrado/artigos/.
-% Pontos a cobrir:
-%   - Função: restaurar a ductilidade do metal após a deformação imposta pela trefilação.
-%   - Tipos de recozimento utilizados (contínuo em linha, indutivo, em forno).
-%   - Parâmetros relevantes (temperatura, tempo de exposição, atmosfera, taxa de resfriamento).
-
-
-\subsection{Esmaltação e cura}
-\label{subsec:esmaltacao}
-
-% TODO: redigir após buscar referências em Mestrado/artigos/.
-% Pontos a cobrir:
-%   - Função: aplicar camadas de verniz isolante curadas em forno aquecido.
-%   - Múltiplas passagens e controle de espessura.
-%   - Perfil térmico do forno e influência sobre adesão e acabamento.
-%   - Acumuladores intermediários (cestos) absorvem variações de tensão da linha.
-
-
-\subsection{Defeitos no fio durante o processo}
-\label{subsec:defeitos}
-
-% Subseção dedicada aos defeitos típicos em cada etapa transformadora.
-% Cada subsubseção descreve:
-%   - Catálogo de defeitos típicos da etapa.
-%   - Origens prováveis (matéria-prima, equipamento, regulagem, efeito combinado).
-%   - Sinais observáveis no chão de fábrica.
-% Esta subseção alimenta o argumento de multiplicidade de causas
-% que fecha a Seção 1.1 e justifica a abordagem híbrida da dissertação.
-
-\subsubsection{Defeitos na trefilação}
-\label{subsubsec:defeitos_trefilacao}
-
-% TODO: redigir após buscar referências em Mestrado/artigos/.
-% Exemplos a cobrir:
-%   - Rompimento sob tração: microtrinca interna, inclusão metálica, mau derretimento na fundição do vergalhão.
-%   - Lascas e marcas superficiais: fieira desgastada, lubrificação inadequada, aspereza do vergalhão.
-%   - Variação de diâmetro: desgaste das fieiras, regulagem de tensão fora da janela, vergalhão fora de especificação.
-
-
-\subsubsection{Defeitos no recozimento}
-\label{subsubsec:defeitos_recozimento}
-
-% TODO: redigir após buscar referências em Mestrado/artigos/.
-% Exemplos a cobrir:
-%   - Oxidação superficial: atmosfera do forno, temperatura excessiva.
-%   - Microestrutura inadequada: tempo de exposição, taxa de resfriamento.
-%   - Fragilização: impurezas no vergalhão, perfil térmico instável.
-
-
-\subsubsection{Defeitos na esmaltação}
-\label{subsubsec:defeitos_esmaltacao}
-
-% TODO: redigir após buscar referências em Mestrado/artigos/.
-% Exemplos a cobrir:
-%   - Bolhas no verniz: impureza ou umidade na superfície, perfil de cura inadequado.
-%   - Descamação e falha de adesão: preparação superficial, formulação do verniz, temperatura do forno.
-%   - Espessura irregular: aplicador, viscosidade do verniz, velocidade da linha.
-
-
-\subsection{Operação contínua e impacto dos rompimentos}
-\label{subsec:operacao_continua}
-
-% TODO: redigir.
-% Pontos a cobrir:
-%   - Caráter contínuo do processo: qualquer rompimento interrompe toda a linha.
-%   - Retrabalho, descarte de material em processo e necessidade de nova regulagem para reinício.
-%   - Mobilização de equipes de manutenção e qualidade.
-%   - Custo agregado de um evento (tempo de máquina parada, perda de material, perda de cadência).
-
-
-\subsection{Multiplicidade de causas e dificuldade de diagnóstico}
-\label{subsec:multiplicidade_causas}
-
-% TODO: redigir.
-% Pontos a cobrir:
-%   - Defeito de matéria-prima e falha de equipamento produzem eventos de aparência parecida.
-%   - Efeitos combinados (vergalhão marginal + regulagem limítrofe).
-%   - Atribuição da causa depende da experiência do especialista.
-%   - Análise pouco padronizada, sujeita a vieses individuais.
-%   - Limites de escala para o volume real de ocorrências da operação.
-% Esta subseção fecha a Seção 1.1 e pavimenta a transição para a Seção 1.2 (Problema de pesquisa).
-
-
-\section{Problema de pesquisa}
-\label{sec:problema_pesquisa}
-
-% Pergunta central:
-% Como combinar sinais operacionais de máquina e evidências
-% estatísticas históricas de rompimentos para apoiar a inferência
-% da provável origem de eventos de rompimento em uma fábrica de
-% fios?
-
-
-\section{Proposição central}
-\label{sec:proposicao_central}
-
-% A integração entre um módulo de detecção de anomalias em
-% variáveis operacionais e um módulo de análise estatística
-% histórica de rompimentos por lote, material, fornecedor e
-% padrão de cruzamento entre máquinas pode produzir um
-% diagnóstico mais consistente, explicável e útil que abordagens
-% isoladas baseadas em apenas um desses eixos.
-
-
-\section{Objetivos}
-\label{sec:objetivos}
-
-\subsection{Objetivo geral}
-\label{subsec:objetivo_geral}
-
-% Desenvolver e avaliar uma ferramenta híbrida de apoio à
-% decisão para inferir a provável origem de rompimentos em uma
-% fábrica de fios, combinando detecção de anomalias operacionais
-% com análise estatística histórica de falhas.
-
-\subsection{Objetivos específicos}
-\label{subsec:objetivos_especificos}
-
-\begin{enumerate}[noitemsep,nosep,labelindent=\parindent,leftmargin=*,label={\alph*}) ]
-	\item Estruturar uma base histórica de rompimentos e operação com qualidade suficiente para análise.
-	\item Modelar o comportamento operacional esperado das máquinas e identificar desvios por meio de técnicas de detecção de anomalias.
-	\item Construir indicadores estatísticos históricos de risco por lote, material, fornecedor e máquina, considerando exposição operacional e taxas relativas de rompimento.
-	\item Definir uma lógica de integração entre evidências operacionais e históricas para produzir um diagnóstico da provável origem do rompimento.
-	\item Avaliar a coerência técnica e a utilidade prática da ferramenta em dados reais de operação fabril.
-	\item Produzir uma representação explicável do diagnóstico, de modo que o resultado possa ser interpretado por manutenção, qualidade e engenharia.
-\end{enumerate}
-
-
-\section{Justificativa}
-\label{sec:justificativa}
-
-% Pontos a cobrir:
-%   - Relevância aplicada (perdas, retrabalho, dependência de
-%     especialista).
-%   - Lacuna técnica (sistemas que integram ML e estatística
-%     histórica com interpretabilidade em chão de fábrica).
-%   - Relevância científica (arquitetura híbrida e explicável
-%     aplicada a domínio industrial real).
-
-
-\section{Contribuições esperadas}
-\label{sec:contribuicoes}
-
-\begin{enumerate}[noitemsep,nosep,labelindent=\parindent,leftmargin=*,label={\alph*}) ]
-	\item Proposição de uma arquitetura híbrida para análise de rompimentos em ambiente industrial real.
-	\item Integração entre aprendizado de máquina não supervisionado e estatística histórica aplicada ao diagnóstico operacional.
-	\item Mecanismo explicável de apoio à decisão para diferenciar indícios de falha de equipamento e suspeita de problema associado a matéria-prima.
-	\item Estruturação de indicadores históricos operacionais reutilizáveis em rotinas de monitoramento e melhoria contínua.
-	\item Geração de conhecimento aplicado para o contexto industrial da fabricação de fios, com potencial de adaptação para outros processos com falhas multifatoriais.
-\end{enumerate}
-
-
-\section{Delimitação metodológica}
-\label{sec:delimitacao}
-
-% O trabalho deve ser apresentado como sistema de inferência da
-% provável origem do rompimento, não como prova causal
-% definitiva. Essa delimitação alinha a promessa acadêmica ao
-% que o método entrega: apoio quantitativo e explicável à
-% decisão em ambiente de incerteza.
-
-
-\section{Organização do trabalho}
-\label{sec:organizacao}
-
-% Sugestão de parágrafo final, a redigir depois que todos os
-% capítulos estiverem com título estável:
-%   - Capítulo 2 apresenta a fundamentação teórica.
-%   - Capítulo 3 descreve a metodologia adotada.
-%   - Capítulo 4 detalha o desenvolvimento da ferramenta.
-%   - Capítulo 5 traz os resultados e a discussão.
-%   - Capítulo 6 apresenta as conclusões e os trabalhos futuros.
