@@ -10,3 +10,42 @@ A pesquisa apresentada nesta dissertação tem natureza aplicada e caráter expl
 A análise opera exclusivamente sobre dados históricos coletados retrospectivamente da operação da fábrica. Aspectos de inferência em tempo real, geração de alertas operacionais e integração com sistemas de chão de fábrica para resposta imediata estão fora do escopo desta dissertação, embora constituam direção natural de trabalho futuro a ser indicada no capítulo final.
 
 A escolha metodológica recai sobre técnicas não supervisionadas de análise de dados, justificada pela ausência de rótulo padronizado sobre a causa provável dos rompimentos, conforme discutido na Seção~\ref{sec:dados_disponiveis}. Em vez de tratar o evento de rompimento como um problema de classificação direta, a abordagem adotada combina dois eixos independentes de evidência. O primeiro analisa o comportamento operacional das máquinas a partir de séries temporais de variáveis sensoriais, enquanto o segundo analisa o histórico estatístico de rompimentos por lote, material, fornecedor e máquina. A integração entre os dois eixos produz o diagnóstico final da provável origem do evento.
+
+
+\section{Fontes de dados}
+\label{sec:fontes_dados}
+
+A operação da fábrica disponibiliza duas tabelas brutas que descrevem aspectos distintos do processo, com naturezas e granularidades próprias. A estrutura de cada tabela condiciona o tipo de técnica de análise aplicável a ela e justifica a discussão das transformações que serão tratadas na Seção~\ref{sec:preparacao_dados}. As Figuras~\ref{fig:tabelastatus} e~\ref{fig:tabelasensores} apresentam uma representação visual de cada tabela, na mesma ordem em que aparecem nas subseções a seguir.
+
+\begin{figure}[htbp]
+    \begin{minipage}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Figuras/TabelaStatus.pdf}
+        \caption{Representação visual da tabela de status.}
+        \label{fig:tabelastatus}
+        \fonte{Elaborado pelo autor (\the\year).}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Figuras/Sensores.pdf}
+        \caption{Representação visual da tabela de sensores.}
+        \label{fig:tabelasensores}
+        \fonte{Elaborado pelo autor (\the\year).}
+    \end{minipage}
+\end{figure}
+
+
+\subsection{Tabela de status}
+\label{subsec:tabela_status}
+
+A primeira tabela registra o histórico de status de cada máquina ao longo do tempo. Cada linha corresponde a um intervalo de operação contínua ou a um evento discreto que interrompeu essa operação. As colunas nativas trazem o identificador do programa associado à execução, o centro de máquina, o código e a descrição do evento, o instante inicial, o instante final e a duração do intervalo. A descrição do evento assume o valor \textsc{operando} nos intervalos de produção sem incidente, e valores específicos nos eventos de parada, incluindo categorias associadas a rompimentos por bolha, asperidade ou instabilidade de forno.
+
+Atributos de produção como lote, material e fornecedor não fazem parte da tabela bruta. Eles são incorporados por cruzamento temporal com a tabela de ordens de produção, conforme detalhado na Seção~\ref{sec:preparacao_dados}. A Figura~\ref{fig:tabelastatus} apresenta a tabela após esse cruzamento, com a granularidade visual preservada da tabela bruta. Cada linha representa um intervalo da máquina, e os eventos de rompimento aparecem como linhas pontuais dentro de um fluxo majoritariamente composto por intervalos de operação contínua.
+
+
+\subsection{Tabela de sensores}
+\label{subsec:tabela_sensores}
+
+A segunda tabela é gerada pelo sistema de aquisição instalado nas máquinas e contém as leituras das variáveis monitoradas. Ela chega em formato longo, no qual cada linha registra uma leitura individual de um sensor, com identificação da variável de processo, do centro de máquina, do instante de registro e dos valores agregados máximo, médio e mínimo no intervalo amostral. O conjunto de variáveis cobre grandezas físicas e elétricas que descrevem o estado térmico, mecânico e elétrico da linha, com sensores distribuídos no recozedor, no forno, na zona de cura, nos pontos críticos do percurso do fio e nos elementos de controle térmico.
+
+A Figura~\ref{fig:tabelasensores} apresenta a tabela. As operações necessárias para transformá-la no formato consumido pelos métodos de análise são descritas na Seção~\ref{sec:preparacao_dados}.
