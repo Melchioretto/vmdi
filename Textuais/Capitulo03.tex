@@ -1,2 +1,12 @@
 \chapter{Metodologia}
 \label{cap:metodologia}
+
+
+\section{Caracterização da pesquisa}
+\label{sec:caracterizacao_pesquisa}
+
+A pesquisa apresentada nesta dissertação tem natureza aplicada e caráter exploratório, orientada por problema concreto observado em ambiente industrial real. O trabalho não parte de uma hipótese formal a ser confirmada, mas sim de uma proposição central a ser construída e avaliada ao longo do desenvolvimento da ferramenta, conforme o problema enunciado na Seção~\ref{sec:problema_pesquisa}.
+
+A análise opera exclusivamente sobre dados históricos coletados retrospectivamente da operação da fábrica. Aspectos de inferência em tempo real, geração de alertas operacionais e integração com sistemas de chão de fábrica para resposta imediata estão fora do escopo desta dissertação, embora constituam direção natural de trabalho futuro a ser indicada no capítulo final.
+
+A escolha metodológica recai sobre técnicas não supervisionadas de análise de dados, justificada pela ausência de rótulo padronizado sobre a causa provável dos rompimentos, conforme discutido na Seção~\ref{sec:dados_disponiveis}. Em vez de tratar o evento de rompimento como um problema de classificação direta, a abordagem adotada combina dois eixos independentes de evidência. O primeiro analisa o comportamento operacional das máquinas a partir de séries temporais de variáveis sensoriais, enquanto o segundo analisa o histórico estatístico de rompimentos por lote, material, fornecedor e máquina. A integração entre os dois eixos produz o diagnóstico final da provável origem do evento.
